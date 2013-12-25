@@ -1,17 +1,29 @@
 from selenium import webdriver
 
-driver = webdriver.Firefox()
-print "Launching Jay's Quora Page"
-driver.get('http://www.quora.com/Jay-Shah-1?share=1')
+#Class which accesses user's Quora page to find its source - navigation is handled by Selenium
+#Returns string with source formatting
+class quoraBrowser():
+	def __init__(self,URL):
 
-print "Populating page by scrolling down"
-#scroll down a few times to make sure we are looking at all of Jay's most recent content
-for i in range(0,5):
-	print "Number of scrolls %s", i
-	driver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+		#Append "?share=1" to the end of URL to bypass login popup
+		self.pageURL = URL + "?share=1"
 
-html_source = driver.page_source
-html_source = html_source.encode("ascii","ignore")
-print html_source 
+	def getSource(self):
+		#Launch Firefox Driver
+		driver = webdriver.Firefox()
+		print "Launching User's Quora Page"
+		
+		#Acess webpage and scroll down to generate most recent content
+		driver.get(self.pageURL)
+		print "Populating page by scrolling down"
+		
+		# for i in range(0,2):
+		# 	print "Number of scrolls %s", i
+		# 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
 
-# driver.close()
+		#Get page source code
+		html_source = driver.page_source
+		html_source = html_source.encode("ascii","ignore")
+		driver.close()	
+		return html_source 
+
