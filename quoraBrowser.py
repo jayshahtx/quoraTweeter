@@ -17,9 +17,8 @@ class quoraBrowser():
 		driver.get(self.pageURL)
 		print "Populating page by scrolling down"
 		
-		# for i in range(0,2):
-		# 	print "Number of scrolls %s", i
-		# 	driver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+		for i in range(0,4):
+			driver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
 
 		#Get page source code
 		html_source = driver.page_source

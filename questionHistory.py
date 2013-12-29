@@ -3,9 +3,10 @@ import os
 
 #check if a dictionary exists, create new one if does not exist
 class questionHistory():
-	def __init__(self,questionList):
+	def __init__(self,questionList,m):
 		#First check if dictionary is already in file
 		self.todaysQuestions = questionList
+		self.maxQuestions = m
 
 	#Returns list of questions that have not been seen before	
 	def getNewQuestions(self):
@@ -24,11 +25,11 @@ class questionHistory():
 
 			#Check if this is a new question
 			if (concat in history)==False:
-
-				currentQ = []
-				currentQ.append(question)
-				newQList.append(currentQ)
+				newQList.append(question)
 				history[concat] = True
+
+			if len(newQList) > self.maxQuestions:
+				break
 
 		#Write new dictionary back to file and return list of new questions
 		pickle.dump(history,open("history.p","wb"))
