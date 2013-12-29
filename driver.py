@@ -9,7 +9,7 @@ import pickle
 
 
 '''This is the main driver for the scraper, 
-	run it once a day to update the Twitter account'''
+	runs once a day to update the Twitter account'''
 
 #This is the URL for your Quora page
 URL = "[Your Quora profile's URL]"
@@ -27,12 +27,6 @@ consumer_secret = '[Your Twitter Consumer Secret'
 #Number of hours across which to schedule tweetes
 tweetHours = 8
 maxDailyTweets = 8
-
-#Find all questions 
-
-# #TEST METHOD, USE WHEN YOU DO NOT WANT TO WAIT FOR FIREFOX DRIVER
-# with open ("sampleSource.txt") as myfile:
-# 	source=myfile.read().replace('\n','')
 
 def runDaily():
 
@@ -60,7 +54,7 @@ def runDaily():
 	t = quoraTweeter(Oauth_token,Oauth_secret,consumer_key,consumer_secret)
 	t.scheduleTweets(newQuestions,tweetHours)
 
-#Run the script once a day between 7 and 9 AM
+#Run the script once a day between 8 and 10 AM
 while True:
 	if dt.now().hour in range(8,10):
 		print "Running script for today at " + str(dt.now())
