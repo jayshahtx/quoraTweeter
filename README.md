@@ -10,6 +10,13 @@ After configuring all APIs, a specified Twitter account will autonomously post t
 
 The scripts parse a user's page daily and find new questions that have not yet been posted to Twitter. Using Bitly's API, the scripts also enable tracking click through rates of each tweet/link.
 
-##Dependencies
+##Non-Standard Dependencies
+
+* selenium
+* beautifulsoup
+* bitly_api
+* twitter (note: this is not python-twitter) 
+
+
 
 
