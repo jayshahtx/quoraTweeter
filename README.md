@@ -1,6 +1,6 @@
 #QuoraTweeter 
 
-quoraTweeter is a collection of Python scripts which help you scrape, parse, and tweet a user's Quora activity to Twitter.
+quoraTweeter is a collection of Python scripts which help you scrape, parse, and tweet a user's Quora activity to Twitter. For a sample output, visit http://twitter.com/quoragems
 
 ##Functionality
 
