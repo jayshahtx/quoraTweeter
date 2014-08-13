@@ -1,5 +1,5 @@
 #QuoraTweeter 
-quoraTweeter is a collection of Python scripts which help you scrape, parse, and tweet a user's Quora activity to Twitter. For a sample output, visit http://twitter.com/quoragems
+quoraTweeter is a collection of Python scripts which help you scrape, parse, and tweet a user's Quora activity to Twitter. Bitly integration also lets you analyze traffic to all the links the script tweets. For a sample output, visit http://twitter.com/quoragems
 
 ##Functionality
 After configuring all APIs, a specified Twitter account will autonomously post tweets in the following format:
